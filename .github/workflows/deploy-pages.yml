@@ -35,7 +35,7 @@ jobs:
       - name: Build
         run: npm ci && npm run build
         env:
-          PUBLIC_URL: /okaku-test
+          PUBLIC_URL: /okaku-whole-front
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

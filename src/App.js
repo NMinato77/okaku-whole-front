@@ -82,7 +82,7 @@ const App = () => {
       } else if (stage === 5) {
         setStage(0);
       }
-    }, [isRecording, stage, recognizedText, transformedText, imageUrl, musicUrl, handleStartRecording, handleStopRecording]);
+    }, [isRecording, stage, handleStartRecording, handleStopRecording]);
 
 
   useEffect(() => {
