@@ -75,7 +75,7 @@ const App = () => {
       } else if (stage === 2) {
         setStage(3);
       } else if (stage === 3) {
-        generateMusic(data.transformed_text);
+        generateMusic(transformedText);
         setStage(4);
       } else if (stage === 4) {
         setStage(5);
