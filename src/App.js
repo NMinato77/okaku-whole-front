@@ -73,9 +73,9 @@ const App = () => {
           setStage(2);
         }, 2000); // 2秒待機
       } else if (stage === 2) {
-        generateMusic(data.transformed_text);
         setStage(3);
       } else if (stage === 3) {
+        generateMusic(data.transformed_text);
         setStage(4);
       } else if (stage === 4) {
         setStage(5);
