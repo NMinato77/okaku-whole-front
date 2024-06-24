@@ -126,7 +126,7 @@ const App = () => {
       body: JSON.stringify({ transformed_text: transformedText })
     })
     .then(response => response.json())
-    .then(data => setMusicUrl(`data.musicPath`))
+    .then(data => setMusicUrl(data.musicPath))
     .catch(error => {
       console.error('Error generating music:', error);
       setMusicUrl(null); // Reset music on error
@@ -213,7 +213,6 @@ const App = () => {
       )}
       {stage === 5 && (
         <div>
-          <p>{musicUrl}</p>
           <audio src={musicUrl} autoPlay />
           <p></p>
           <p>あなたの名前の</p>
