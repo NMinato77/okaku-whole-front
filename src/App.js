@@ -41,9 +41,9 @@ const App = () => {
           setRecognizedText(data.recognized_text);
           setOriginalText(data.original_text);
           setTransformedText(data.transformed_text);
+          textToSpeech(data.transformed_text);
           generateImage(data.transformed_text);
           generateMusic(data.transformed_text);
-          textToSpeech(data.transformed_text);
         })
         .catch(error => console.error('Error:', error))
         .finally(() => setIsRecording(false));
