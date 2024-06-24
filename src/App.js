@@ -32,7 +32,7 @@ const App = () => {
         const formData = new FormData();
         formData.append('audio', audioBlob, 'audio.webm');
 
-        fetch('http://127.0.0.1:5000/recognize', {
+        fetch('https://okaku-whole-back.onrender.com/recognize', {
           method: 'POST',
           body: formData
         })
@@ -100,7 +100,7 @@ const App = () => {
 
   const generateImage = (transformedText) => {
     setGeneratingImage(true);
-    fetch('http://127.0.0.1:5000/generate-image', {
+    fetch('https://okaku-whole-back.onrender.com/generate-image', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const App = () => {
       body: JSON.stringify({ transformed_text: transformedText })
     })
     .then(response => response.json())
-    .then(data => setImageUrl(`http://127.0.0.1:5000/generated/${data.imagePath}`))
+    .then(data => setImageUrl(`https://okaku-whole-back.onrender.com/generated/${data.imagePath}`))
     .catch(error => {
       console.error('Error generating image:', error);
       setImageUrl(null); // Reset image on error
@@ -118,7 +118,7 @@ const App = () => {
 
   const generateMusic = (transformedText) => {
     setGeneratingMusic(true);
-    fetch('http://127.0.0.1:5000/generate-music', {
+    fetch('https://okaku-whole-back.onrender.com/generate-music', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ const App = () => {
       body: JSON.stringify({ transformed_text: transformedText })
     })
     .then(response => response.json())
-    .then(data => setMusicUrl(`http://127.0.0.1:5000/generated/${data.musicPath}`))
+    .then(data => setMusicUrl(`https://okaku-whole-back.onrender.com/generated/${data.musicPath}`))
     .catch(error => {
       console.error('Error generating music:', error);
       setMusicUrl(null); // Reset music on error
@@ -135,7 +135,7 @@ const App = () => {
   };
 
   const textToSpeech = (transformedText) => {
-    fetch('http://127.0.0.1:5000/text-to-speech', {
+    fetch('https://okaku-whole-back.onrender.com/text-to-speech', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ const App = () => {
       body: JSON.stringify({ transformed_text: transformedText })
     })
     .then(response => response.json())
-    .then(data => setTtsUrl(`http://127.0.0.1:5000/generated/${data.ttsPath}`))
+    .then(data => setTtsUrl(`https://okaku-whole-back.onrender.com/generated/${data.ttsPath}`))
     .catch(error => {
       console.error('Error generating text-to-speech:', error);
       setTtsUrl(null); // Reset TTS on error
