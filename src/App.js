@@ -43,7 +43,6 @@ const App = () => {
           setTransformedText(data.transformed_text);
           textToSpeech(data.transformed_text);
           generateImage(data.transformed_text);
-          generateMusic(data.transformed_text);
         })
         .catch(error => console.error('Error:', error))
         .finally(() => setIsRecording(false));
@@ -72,8 +71,9 @@ const App = () => {
         setTimeout(() => {
           setDelaying(false);
           setStage(2);
-        }, 3000); // 3秒待機
+        }, 2000); // 2秒待機
       } else if (stage === 2) {
+        generateMusic(data.transformed_text);
         setStage(3);
       } else if (stage === 3) {
         setStage(4);
