@@ -151,7 +151,10 @@ const App = () => {
   };
 
   return (
-    <div style={{ fontFamily: 'Kozuka Gothic', textAlign: 'center', backgroundColor: 'black', color: 'white', height: '100vh', padding: '20px', overflow: 'auto' }}>
+    <div
+      onClick={handleEnterPress} 
+      onKeyPress={(e) => e.key === 'Enter' && handleEnterPress()} 
+      style={{ fontFamily: 'Kozuka Gothic', textAlign: 'center', backgroundColor: 'black', color: 'white', height: '100vh', padding: '20px', overflow: 'auto' }}>
       {stage === 0 && (
         <div>
           <p>Language is a virus from outerspace</p>
